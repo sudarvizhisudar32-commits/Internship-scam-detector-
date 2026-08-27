@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Scam Detector</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h2>Scam<span>Shield</span></h2>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#checker">Check Internship</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <p class="tagline">STAY SAFE • STAY AWARE</p>
+
+        <h1>
+            Internship<br>
+            <span>Scam Detector</span>
+        </h1>
+
+        <p>
+            Check internship offers for common scam warning signs
+            before paying money or sharing personal information.
+        </p>
+
+        <a href="#checker" class="btn">
+            Check Internship →
+        </a>
+
+    </div>
+
+    <div class="hero-icon">
+        🛡️
+    </div>
+
+</section>
+
+
+<section id="checker" class="checker-section">
+
+    <div class="section-title">
+
+        <p>INTERNSHIP VERIFICATION</p>
+
+        <h2>Check Your Internship</h2>
+
+        <span>
+            Enter the internship details below.
+        </span>
+
+    </div>
+
+
+    <div class="checker-container">
+
+        <form id="scamForm">
+
+            <label>Company Name</label>
+
+            <input
+                type="text"
+                id="company"
+                placeholder="Enter company name"
+                required
+            >
+
+
+            <label>Stipend Offered</label>
+
+            <input
+                type="number"
+                id="stipend"
+                placeholder="Example: 10000"
+                required
+            >
+
+
+            <label>Registration / Training Fee</label>
+
+            <input
+                type="number"
+                id="fee"
+                placeholder="Enter fee"
+                value="0"
+                required
+            >
+
+
+            <label>Contact Method</label>
+
+            <select id="contact" required>
+
+                <option value="">
+                    Select contact method
+                </option>
+
+                <option value="official">
+                    Official company email
+                </option>
+
+                <option value="personal">
+                    Gmail / Yahoo / Personal email
+                </option>
+
+                <option value="whatsapp">
+                    WhatsApp only
+                </option>
+
+                <option value="telegram">
+                    Telegram only
+                </option>
+
+            </select>
+
+
+            <label>Job / Certificate Promise</label>
+
+            <select id="certificate" required>
+
+                <option value="">
+                    Select an option
+                </option>
+
+                <option value="normal">
+                    No unusual promise
+                </option>
+
+                <option value="guaranteed">
+                    Guaranteed job / high salary
+                </option>
+
+                <option value="certificate">
+                    Guaranteed certificate after payment
+                </option>
+
+            </select>
+
+
+            <label>
+                Are you pressured to pay quickly?
+            </label>
+
+            <select id="urgency" required>
+
+                <option value="">
+                    Select an option
+                </option>
+
+                <option value="no">
+                    No
+                </option>
+
+                <option value="yes">
+                    Yes
+                </option>
+
+            </select>
+
+
+            <button type="submit" class="check-btn">
+                🔍 Check Internship
+            </button>
+
+        </form>
+
+
+        <div id="result" class="result hidden">
+
+            <div id="resultIcon" class="result-icon">
+                🔍
+            </div>
+
+            <h3 id="resultTitle">
+                Result
+            </h3>
+
+            <p id="resultMessage"></p>
+
+            <div class="score-box">
+
+                <span>Risk Score</span>
+
+                <strong id="score">0</strong>
+
+                <span>/ 100</span>
+
+            </div>
+
+            <div id="warnings"></div>
+
+            <button
+                type="button"
+                onclick="resetChecker()"
+                class="reset-btn"
+            >
+                Check Another Internship
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="warning-section">
+
+    <div class="section-title">
+
+        <p>BE AWARE</p>
+
+        <h2>Common Warning Signs</h2>
+
+    </div>
+
+
+    <div class="warning-grid">
+
+        <div class="warning-card">
+
+            <div>💰</div>
+
+            <h3>Payment Request</h3>
+
+            <p>
+                Asking for registration or training fees.
+            </p>
+
+        </div>
+
+
+        <div class="warning-card">
+
+            <div>📧</div>
+
+            <h3>Suspicious Contact</h3>
+
+            <p>
+                Communication only through personal accounts.
+            </p>
+
+        </div>
+
+
+        <div class="warning-card">
+
+            <div>⚡</div>
+
+            <h3>Urgent Pressure</h3>
+
+            <p>
+                Asking you to pay immediately.
+            </p>
+
+        </div>
+
+
+        <div class="warning-card">
+
+            <div>🚨</div>
+
+            <h3>Unrealistic Promise</h3>
+
+            <p>
+                Guaranteed jobs or unusually high salaries.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="about-section">
+
+    <div class="section-title">
+
+        <p>ABOUT THE PROJECT</p>
+
+        <h2>Why This Tool?</h2>
+
+    </div>
+
+    <div class="about-box">
+
+        <p>
+            Internship Scam Detector is a web-based project
+            designed to help students identify common warning
+            signs in internship offers.
+        </p>
+
+        <p>
+            The application analyzes the information entered by
+            the user and generates a simple risk score.
+        </p>
+
+        <strong>
+            ⚠️ This is only a first-level check. Always verify
+            the company independently.
+        </strong>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>
+        Scam<span>Shield</span>
+    </h3>
+
+    <p>
+        Internship Scam Detector
+    </p>
+
+    <p>
+        © 2026
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
